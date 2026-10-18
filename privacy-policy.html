@@ -1,0 +1,169 @@
+<!doctype html>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Blockqueue Privacy Policy</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<style>
+/* Layout: one centred reading column (~65ch); the app icon (Scripts/make-app-icon.swift) heads it, light or dark like the home screen. */
+:root {
+  --bg: #f6f7f8;
+  --surface: #ffffff;
+  --fg: #1c2027;
+  --muted: #5a616d;
+  --line: #dde1e6;
+  --accent: #1f8f5c;
+  --icon-top: #19b39a; --icon-bottom: #0b6e60; --icon-glyph: #ffffff;
+  --code-bg: #eceff2;
+  --font-display: ui-serif, "New York", Georgia, "Times New Roman", serif;
+  --font-body: -apple-system, system-ui, "Segoe UI", Helvetica, Arial, sans-serif;
+  --font-mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #14161b; --surface: #1c1f26; --fg: #e9ebef; --muted: #a2a9b5; --line: #2e333d;
+    --accent: #4fd08e; --code-bg: #262a33;
+    --icon-top: #15302c; --icon-bottom: #0a1513; --icon-glyph: #4fd6be;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #14161b; --surface: #1c1f26; --fg: #e9ebef; --muted: #a2a9b5; --line: #2e333d;
+  --accent: #4fd08e; --code-bg: #262a33;
+  --icon-top: #15302c; --icon-bottom: #0a1513; --icon-glyph: #4fd6be;
+  color-scheme: dark;
+}
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-body);
+  font-size: 17px;
+  line-height: 1.6;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 40px 64px;
+}
+main { max-width: 42rem; margin: 0 auto; display: grid; gap: 28px; }
+header { display: grid; gap: 12px; padding-bottom: 24px; border-bottom: 1px solid var(--line); }
+.brand { display: flex; align-items: center; gap: 10px; font-weight: 600; letter-spacing: 0.02em; }
+.mark { width: 32px; height: 32px; flex: none; }
+.mark .top { stop-color: var(--icon-top); }
+.mark .bottom { stop-color: var(--icon-bottom); }
+.mark .glyph { fill: var(--icon-glyph); }
+h1 { font-family: var(--font-display); font-size: clamp(2rem, 6vw, 2.6rem); line-height: 1.1; margin: 0; text-wrap: balance; }
+.meta { color: var(--muted); font-size: 0.95rem; margin: 0; }
+.summary { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 18px 20px; }
+.summary h2 { margin-top: 0; }
+.summary ul { margin: 0; padding-left: 1.2em; display: grid; gap: 6px; }
+section { display: grid; gap: 10px; }
+h2 { font-family: var(--font-display); font-size: 1.35rem; line-height: 1.25; margin: 0; text-wrap: balance; }
+p, ul { margin: 0; max-width: 65ch; }
+ul { padding-left: 1.2em; display: grid; gap: 6px; }
+a { color: var(--accent); text-underline-offset: 2px; }
+a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 2px; }
+code { font-family: var(--font-mono); font-size: 0.88em; background: var(--code-bg); padding: 1px 5px; border-radius: 4px; overflow-wrap: anywhere; }
+footer { color: var(--muted); font-size: 0.92rem; border-top: 1px solid var(--line); padding-top: 18px; }
+footer p { max-width: none; }
+</style>
+
+<main>
+  <header>
+    <div class="brand"><svg class="mark" viewBox="0 0 1024 1024" aria-hidden="true">
+        <defs><linearGradient id="icon-bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" class="top"/><stop offset="1" class="bottom"/></linearGradient></defs>
+        <rect width="1024" height="1024" rx="230" fill="url(#icon-bg)"/>
+        <g class="glyph">
+          <rect x="123" y="456" width="112" height="112" rx="28" opacity="0.35"/>
+          <rect x="269" y="456" width="112" height="112" rx="28" opacity="0.6"/>
+          <rect x="415" y="456" width="112" height="112" rx="28" opacity="0.85"/>
+          <rect x="561" y="342" width="340" height="340" rx="80"/>
+        </g>
+      </svg>Blockqueue</div>
+    <h1>Privacy Policy</h1>
+    <p class="meta">Effective October 18, 2026</p>
+  </header>
+
+  <div class="summary">
+    <h2>In short</h2>
+    <ul>
+      <li>Blockqueue has no accounts, no ads, no analytics and no tracking.</li>
+      <li>The developer of Blockqueue does not collect, receive or store any of your data, unless you choose to send feedback by email.</li>
+      <li>Bitcoin data comes from <strong>mempool.space</strong>. Your device asks mempool.space directly, so mempool.space sees your requests and IP address.</li>
+      <li>Your settings and recent searches stay on your device.</li>
+      <li>The app also reads a small settings file from GitHub to check whether an update is required. Nothing about you is sent with it.</li>
+    </ul>
+  </div>
+
+  <section>
+    <h2>Where the data comes from</h2>
+    <p>Blockqueue shows public Bitcoin data: fees, blocks, transactions and addresses. All of it comes from <a href="https://mempool.space">mempool.space</a>, a public Bitcoin explorer operated by Mempool Holdings S.A. de C.V. in El Salvador. Blockqueue works with mempool.space® and is not affiliated with or endorsed by Mempool.</p>
+    <p>When you use the app, your device connects straight to mempool.space's servers at <code>mempool.space/api</code> and its live-update connection. Blockqueue has no server of its own in between. The requests include:</p>
+    <ul>
+      <li>the dashboard data the app loads and keeps up to date, such as fees, blocks, mempool size, difficulty and price;</li>
+      <li>any block, transaction or address you open or search for;</li>
+      <li>the network you choose in Settings: Mainnet, Testnet4 or Signet. All three are served by mempool.space.</li>
+    </ul>
+    <p>Like any website, mempool.space receives your IP address with each request. Under <a href="https://mempool.space/privacy-policy">mempool.space's privacy policy</a>, it keeps web server logs, including IP addresses and requests, for 10 days, runs its own analytics with IP addresses redacted, and does not share this data with third parties. mempool.space handles that data under its own policy, not this one.</p>
+    <p>If you prefer that no one learns which addresses or transactions you look up, avoid looking up your own addresses, or use a VPN or Tor at the network level.</p>
+  </section>
+
+  <section>
+    <h2>App settings from GitHub</h2>
+    <p>When the app opens, and each time you return to it, it downloads a small public settings file hosted on GitHub at <code>gist.githubusercontent.com</code>. The file tells the app the oldest version that is still supported and where to find it on the App Store. The request carries no information about you, your searches or your settings, but like any web request it reaches GitHub with your IP address. GitHub handles that under the <a href="https://docs.github.com/site-policy/privacy-policies/github-general-privacy-statement">GitHub General Privacy Statement</a>. The developer does not receive these requests.</p>
+  </section>
+
+  <section>
+    <h2>What stays on your device</h2>
+    <p>Blockqueue saves a few things in its own storage on your device so it works the way you left it:</p>
+    <ul>
+      <li>your settings: network, currency, fee rate unit and theme;</li>
+      <li>up to 10 recent successful searches for each network, so you can open them again quickly;</li>
+      <li>a few counters that decide when to ask you to rate the app: the last days you used it, how many lookups you've finished, and when and for which version you were last asked.</li>
+    </ul>
+    <p>This information is never sent to the developer or anyone else. You can remove recent searches with <strong>Clear</strong> in the search screen, or remove individual entries with a long press. Deleting the app deletes all of it.</p>
+  </section>
+
+  <section>
+    <h2>What Blockqueue does not do</h2>
+    <ul>
+      <li>It does not ask you to sign in or create an account.</li>
+      <li>It does not use advertising, analytics or tracking tools, and it does not track you across other apps or websites.</li>
+      <li>It does not access your contacts, photos, location, camera or microphone.</li>
+      <li>It does not read your clipboard. It only writes to it when you tap a copy button.</li>
+      <li>It does not hold, send or receive bitcoin, and it never asks for keys or seed phrases.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Sending feedback</h2>
+    <p><strong>Send Feedback</strong> in Settings prepares an email to the developer. Nothing is sent until you review it and tap Send in your email app. The email contains:</p>
+    <ul>
+      <li>your message, the topic you picked and your email address;</li>
+      <li>if you leave <strong>Include app and device details</strong> on: the app version, iOS version, device model, chosen network and fee unit. The form shows these lines before you send, and you can turn them off.</li>
+    </ul>
+    <p>The developer uses these emails only to reply to you and to improve Blockqueue, and does not share them. Ask at the address below and your emails will be deleted.</p>
+  </section>
+
+
+  <section>
+    <h2>Crash reports from Apple</h2>
+    <p>If you have turned on <strong>Share With App Developers</strong> in your iPhone's Privacy settings, Apple may share crash reports and usage statistics with the developer. Apple collects these, not Blockqueue, and they are covered by Apple's privacy policy. You can turn this off at any time in Settings &gt; Privacy &amp; Security &gt; Analytics &amp; Improvements.</p>
+  </section>
+
+  <section>
+    <h2>Children</h2>
+    <p>Blockqueue is a general-audience app and does not knowingly collect information from anyone, including children.</p>
+  </section>
+
+  <section>
+    <h2>Changes to this policy</h2>
+    <p>If Blockqueue's handling of data changes, for example by adding notifications that need a server, this policy will be updated before that version is released, and the effective date above will change.</p>
+  </section>
+
+  <section>
+    <h2>Contact</h2>
+    <p>Questions about this policy or your privacy in Blockqueue: <a href="mailto:ktsprnp@gmail.com">ktsprnp@gmail.com</a></p>
+  </section>
+
+  <footer>
+    <p>mempool.space® is a registered trademark of Mempool Holdings S.A. de C.V. and is used here only to describe where Blockqueue's data comes from.</p>
+  </footer>
+</main>
