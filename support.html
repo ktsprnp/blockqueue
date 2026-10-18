@@ -1,0 +1,142 @@
+<!doctype html>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Blockqueue Support</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<style>
+/* Layout: one centred reading column (~65ch); the app icon (Scripts/make-app-icon.swift) heads it, light or dark like the home screen. */
+:root {
+  --bg: #f6f7f8;
+  --surface: #ffffff;
+  --fg: #1c2027;
+  --muted: #5a616d;
+  --line: #dde1e6;
+  --accent: #1f8f5c;
+  --icon-top: #19b39a; --icon-bottom: #0b6e60; --icon-glyph: #ffffff;
+  --code-bg: #eceff2;
+  --font-display: ui-serif, "New York", Georgia, "Times New Roman", serif;
+  --font-body: -apple-system, system-ui, "Segoe UI", Helvetica, Arial, sans-serif;
+  --font-mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #14161b; --surface: #1c1f26; --fg: #e9ebef; --muted: #a2a9b5; --line: #2e333d;
+    --accent: #4fd08e; --code-bg: #262a33;
+    --icon-top: #15302c; --icon-bottom: #0a1513; --icon-glyph: #4fd6be;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #14161b; --surface: #1c1f26; --fg: #e9ebef; --muted: #a2a9b5; --line: #2e333d;
+  --accent: #4fd08e; --code-bg: #262a33;
+  --icon-top: #15302c; --icon-bottom: #0a1513; --icon-glyph: #4fd6be;
+  color-scheme: dark;
+}
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-body);
+  font-size: 17px;
+  line-height: 1.6;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 40px 64px;
+}
+main { max-width: 42rem; margin: 0 auto; display: grid; gap: 28px; }
+header { display: grid; gap: 12px; padding-bottom: 24px; border-bottom: 1px solid var(--line); }
+.brand { display: flex; align-items: center; gap: 10px; font-weight: 600; letter-spacing: 0.02em; }
+.mark { width: 32px; height: 32px; flex: none; }
+.mark .top { stop-color: var(--icon-top); }
+.mark .bottom { stop-color: var(--icon-bottom); }
+.mark .glyph { fill: var(--icon-glyph); }
+h1 { font-family: var(--font-display); font-size: clamp(2rem, 6vw, 2.6rem); line-height: 1.1; margin: 0; text-wrap: balance; }
+.meta { color: var(--muted); font-size: 0.95rem; margin: 0; }
+.summary { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 18px 20px; }
+.summary h2 { margin-top: 0; }
+.summary ul { margin: 0; padding-left: 1.2em; display: grid; gap: 6px; }
+section { display: grid; gap: 10px; }
+h2 { font-family: var(--font-display); font-size: 1.35rem; line-height: 1.25; margin: 0; text-wrap: balance; }
+p, ul { margin: 0; max-width: 65ch; }
+ul { padding-left: 1.2em; display: grid; gap: 6px; }
+a { color: var(--accent); text-underline-offset: 2px; }
+a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 2px; }
+code { font-family: var(--font-mono); font-size: 0.88em; background: var(--code-bg); padding: 1px 5px; border-radius: 4px; overflow-wrap: anywhere; }
+footer { color: var(--muted); font-size: 0.92rem; border-top: 1px solid var(--line); padding-top: 18px; }
+footer p { max-width: none; }
+.contact { display: flex; flex-wrap: wrap; gap: 10px; }
+.button { display: inline-block; background: var(--accent); color: var(--bg); font-weight: 600; text-decoration: none; padding: 10px 18px; border-radius: 999px; }
+details { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 14px 18px; }
+details + details { margin-top: -2px; }
+summary { cursor: pointer; font-weight: 600; }
+details[open] summary { margin-bottom: 8px; }
+details p + p { margin-top: 8px; }
+</style>
+
+<main>
+  <header>
+    <div class="brand"><svg class="mark" viewBox="0 0 1024 1024" aria-hidden="true">
+        <defs><linearGradient id="icon-bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" class="top"/><stop offset="1" class="bottom"/></linearGradient></defs>
+        <rect width="1024" height="1024" rx="230" fill="url(#icon-bg)"/>
+        <g class="glyph">
+          <rect x="123" y="456" width="112" height="112" rx="28" opacity="0.35"/>
+          <rect x="269" y="456" width="112" height="112" rx="28" opacity="0.6"/>
+          <rect x="415" y="456" width="112" height="112" rx="28" opacity="0.85"/>
+          <rect x="561" y="342" width="340" height="340" rx="80"/>
+        </g>
+      </svg>Blockqueue</div>
+    <h1>Support</h1>
+    <p class="meta">Help with Blockqueue, the Bitcoin explorer for iPhone and iPad.</p>
+  </header>
+
+  <section class="summary">
+    <h2>Get in touch</h2>
+    <p>Found a bug, have an idea or a question? The quickest way is from inside the app: open <strong>Settings</strong> and tap <strong>Send Feedback</strong>, or shake your device twice on any screen. The form can add your app version, iOS version and device model so problems are easier to track down, and you can turn that off before sending.</p>
+    <p>You can also email directly.</p>
+    <div class="contact"><a class="button" href="mailto:ktsprnp@gmail.com?subject=Blockqueue%20support">Email ktsprnp@gmail.com</a></div>
+  </section>
+
+  <section>
+    <h2>Common questions</h2>
+    <details>
+      <summary>Where does the data come from?</summary>
+      <p>Fees, blocks, transactions, addresses and prices come from <a href="https://mempool.space">mempool.space</a>, a public Bitcoin explorer. Your device asks mempool.space directly, and Blockqueue has no server of its own. Blockqueue works with mempool.space® and is not affiliated with or endorsed by Mempool.</p>
+    </details>
+    <details>
+      <summary>Can Blockqueue send or receive bitcoin?</summary>
+      <p>No. Blockqueue only shows public Bitcoin data. It is not a wallet, and it will never ask for your keys or seed phrase. If anything claiming to be Blockqueue asks for them, don't enter them.</p>
+    </details>
+    <details>
+      <summary>What can I search for?</summary>
+      <p>A transaction ID, a block hash or height, a Bitcoin address, a mempool.space link or a <code>bitcoin:</code> payment link. Your last 10 successful searches are kept on your device for each network. Press and hold an entry to remove it, or use <strong>Clear</strong> to remove them all.</p>
+    </details>
+    <details>
+      <summary>The dashboard says it's reconnecting or isn't updating.</summary>
+      <p>Live updates need an internet connection to mempool.space. Blockqueue reconnects on its own when the connection comes back, and pauses live updates while the app is in the background. If it stays stuck, check your connection or any VPN or content blocker, then close and reopen the app.</p>
+    </details>
+    <details>
+      <summary>Why is there no price on Testnet4 or Signet?</summary>
+      <p>Coins on test networks have no value, so amounts aren't converted to your currency there. Switch back to Mainnet in <strong>Settings</strong> to see prices.</p>
+    </details>
+    <details>
+      <summary>What do sat/vB and sat/WU mean?</summary>
+      <p>Both measure the fee rate a transaction pays. Most wallets use satoshis per virtual byte (sat/vB). One sat/vB equals 0.25 satoshis per weight unit (sat/WU). Pick the unit you prefer in <strong>Settings</strong>.</p>
+    </details>
+    <details>
+      <summary>The app asks me to update before I can use it.</summary>
+      <p>Very occasionally an older version stops working properly, for example when mempool.space changes how it sends data. Blockqueue then asks you to update. Tap <strong>Update on the App Store</strong> to open the App Store and install the latest version.</p>
+    </details>
+    <details>
+      <summary>Which devices are supported?</summary>
+      <p>iPhone and iPad running iOS or iPadOS 26 or later.</p>
+    </details>
+  </section>
+
+  <section>
+    <h2>Privacy</h2>
+    <p>Blockqueue has no accounts, ads, analytics or tracking. Read the full <a href="privacy-policy.html">privacy policy</a>.</p>
+  </section>
+
+  <footer>
+    <p>mempool.space® is a registered trademark of Mempool Holdings S.A. de C.V. and is used here only to describe where Blockqueue's data comes from.</p>
+  </footer>
+</main>
